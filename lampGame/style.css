@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Roboto:wght@300&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    --purple: #B24BF3;
+    --pink: #D7A1F9;
+    --dark-grey: #36454F;
+    --box-shadow: 0 1px 20px rgba(0, 0, 0, 0.279);
+    --text-color: #d7d5f2;
+    --yellow: rgb(255, 174, 0);
+    --red: rgb(249, 66, 66);
+    --green: rgb(80, 205, 80);
+    --halvany-szurke: #36454f95;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, "Helvetica Neue", "Helvetica";
+}
+body {
+    background-color: var(--dark-grey);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type="text"],button {
+    border: none;
+    outline: none;
+}
+.menu, .statpage, .game {
+    background: linear-gradient(345deg,var(--purple), var(--pink));
+    height: 90vh;
+    width: 60vh;
+    margin: 0 2vh;
+    border-radius: 3vh;
+    box-shadow: var(--box-shadow);
+    padding: 2vh 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 4vh;
+    position: relative;
+    overflow: hidden;
+}
+.menu label {
+    text-align: center;
+    font-size: 2.5vh;
+}
+.menu label input {
+    padding: 1.5vh;
+    border-radius: 0.5vh;
+    font-size: 2.5vh;
+}
+.difficulty {
+    font-size: 3.5vh;
+    text-align: center;
+    width: 80%;
+}
+.difficulty button {
+    padding: 1.5vh;
+    border-radius: 1vh;
+    font-size: 2.5vh;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.13);
+    font-weight: 500;
+}
+.medium {
+    background-color: var(--yellow);
+}
+.hard {
+    background-color: var(--red);
+}
+.easy {
+    background-color: var(--green);
+}
+.info {
+    font-size: 2vh;
+    text-align: center;
+    display: flex;
+    gap: 0.5vh;
+    align-items: center;
+}
+.info i {
+    font-size: 4vh;
+}
+.start, .next {
+    padding: 1.5vh;
+    border-radius: 4vh;
+    font-size: 2.5vh;
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--halvany-szurke);
+    color:var(--text-color);
+    transition: 0.25s ease-in-out;
+}
+
+.start:hover, .next:hover {
+    background-color: #9d00ff;
+}
+
+.stats, .back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--purple);
+    width: 8vh;
+    height: 8vh;
+    border-radius: 0 0 0 2vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.stats span {
+    position: relative;
+    
+}
+.stats h6 {
+    position: absolute;
+    bottom: -1vh;
+    right: 3vh;
+    background-color: var(--halvany-szurke);
+    width: 4vh;
+    height: 4vh;
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 50%;
+    font-size: 2.8vh;
+}
+.statpage {
+    display: flex;
+    justify-self: start;
+    padding: 2vh;
+    display:none;
+}
+.records {
+    height: 60vh;
+    width: 100%;
+    overflow: auto;
+
+}
+.record {
+    background-color: var(--halvany-szurke);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 3vh;
+    padding: 2vh 1vh;
+    border-radius: 3vh;
+    box-shadow: var(--box-shadow);
+    margin: 3vh 1vh;
+    flex-wrap: wrap;
+}
+.record h2 {
+    color: var(--text-color);
+    font-size: 2vh;
+}
+::-webkit-scrollbar {
+    width: 1vh;
+
+
+}
+::-webkit-scrollbar-track {
+    margin-block: 5vh;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(240, 248, 255, 0.493);
+    border-radius: 100vw;
+}
+.gamefield {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 50vh;
+    height: 50vh;
+    box-shadow: var(--box-shadow);
+}
+
+.gamefield div {
+    font-size: 2vh;
+    border: 0.1vh solid var(--dark-grey);
+    cursor: pointer;
+    height: 5vh;
+    width: 5vh;
+}
+.gamefield div:not(.black, .bulb, .light) {
+    background-color: aliceblue;
+
+}
+
+.bulb {
+    background: url('bulb.png');
+    background-size: cover;
+    background-color: var(--yellow);
+}
+.black {
+    background-color: black;
+}
+.light {
+    background-color: var(--yellow);
+}
+.game {
+    justify-content: center;    
+    align-items: start;
+    display: none;
+}
+.game .nezehsegmutato {
+    align-items: center;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    font-size: 2.5vh;
+    border-radius: 5vh 5vh 0 0;
+    box-shadow: var(--box-shadow);
+}
+.game .display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.game h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.next, .game h1 {
+    display: none;
+}
